@@ -5,12 +5,14 @@ class BookController < ApplicationController
     end
 
     def list
+        @posts = Post.all
         render "root/bookList"
     end
     
     def show
         # Redirection
         # redirect_to('/bookList')
+        @posts = Post.all
         render "root/bookShow"
     end
 
@@ -73,8 +75,6 @@ class BookController < ApplicationController
         @post.save
         @posts = Post.all
         render "root/bookIndex"
-    
     end
-
 
 end
