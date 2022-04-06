@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   get '/response' , to: "book#apiCall"
   get '/user/:id/:name' , to: "book#user"
   post '/add' , to: "book#add"
-  
+  get '/delete/:id' , to: "book#delete"  
+  get '/search' , to: "book#search"
+  get '/update/:id' , to: "book#update"
+  post '/updateform', to: "book#updateform"
 
 
 end

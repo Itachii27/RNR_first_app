@@ -17,12 +17,13 @@
 </form>
 <hr>
 <% @posts.each do |post| %>
-   <%= post.title %>
    <div class="card" style="width: 18rem; margin: 0 auto;">
   <div class="card-body">
     <h5 class="card-title"><%= post.title %></h5>
     <p class="card-text"><%= post.description %></p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a href="/delete/<%= post.id %>" data-method ="delete" class="btn btn-danger" style="margin: 0 auto">Delete</a>
+    <a href="/update/<%= post.id %>" class="btn btn-warning" style="margin: 0 auto">Update</a>
+
   </div>
 </div>
    <% end %>
