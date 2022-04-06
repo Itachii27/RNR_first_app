@@ -1,5 +1,6 @@
 class BookController < ApplicationController
     def index
+        @posts = Post.all
         render "root/bookIndex"
     end
 
@@ -38,11 +39,10 @@ class BookController < ApplicationController
             :status => 200,
             :message => "saved successfully",
         }
-
-        render json: @callback
+        @posts = Post.all
+        render "root/bookIndex"
+        #render json: @callback
         #render json: @post
-
         #render json: params
     end 
-
 end
